@@ -1,0 +1,22 @@
+*{
+  margin: auto;
+}
+
+html, body {
+  margin: auto;
+  padding: 0;
+  background: grey;
+}
+canvas {
+  display: block;
+
+}
+
+#play_button{
+  position: absolute;
+  margin-left: 47%;
+  top:65%;
+  /* width: 100px; height: 35px; background-color: lightgreen; color: black; font-size: 22px; border-radius: 10px; */
+}
+
+
