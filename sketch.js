@@ -1,6 +1,6 @@
 /* Variables for pages*/
 const startMenu = 0, loadingPage = 1, namePage = 2, gamePage = 3, gameOverPage = 4;
-var currentPage = 2;
+var currentPage = 0;
 
 /*Videos*/
 var introVideo;
