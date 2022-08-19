@@ -1,7 +1,3 @@
-*{
-  margin: auto;
-}
-
 html, body {
   margin: auto;
   padding: 0;
@@ -12,11 +8,41 @@ canvas {
 
 }
 
-#play_button{
-  position: absolute;
-  margin-left: 47%;
-  top:65%;
-  /* width: 100px; height: 35px; background-color: lightgreen; color: black; font-size: 22px; border-radius: 10px; */
+#play-button{
+  width: 100px; 
+  height: 35px; 
+  background-color: lightgreen; 
+  color: black; 
+  font-size: 22px;
+   border-radius: 10px;
+}
+#play-button:hover{
+  background-color: darkgreen;
+  color: white;
 }
 
+#enter-button{
+  width: 75px; 
+  height: 35px;
+  color: black; 
+  font-size: 24px; 
+  border-radius: 10px;
+}
 
+#enter-button:hover{
+  background-color: grey;
+}
+
+#text-header{
+  font-size: 64px;
+  font-family: Tahoma;
+}
+
+#name-input{
+  width: 200px; 
+  height: 30px; 
+  font: Georgia;  
+  font-size: 24px; 
+  border-radius: 5px; 
+  border: 2px solid black;
+}

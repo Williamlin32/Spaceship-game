@@ -1,6 +1,6 @@
 /* Variables for pages*/
 const startMenu = 0, loadingPage = 1, namePage = 2, gamePage = 3, gameOverPage = 4;
-var currentPage = 0;
+var currentPage = 2;
 
 /*Videos*/
 var introVideo;
@@ -41,6 +41,7 @@ function preload(){
 
 function setup() {
  createCanvas(700, 700);
+ select('canvas').position(400,0)
   background(0, 0, 0);
   introVideo = createVideo("Videos/Intro.mp4");
   loadingVideo = createVideo("Videos/Loading.mp4");
@@ -75,8 +76,8 @@ function draw() {
 function hideElements(){
   introVideo.hide();
   loadingVideo.hide();
-  nameInput.hide();
   playButton.hide();
+  nameInput.hide();
   enterButton.hide();
   textHeader.hide();
 }
@@ -165,24 +166,19 @@ function teleportation(){
 
 /* functions for elements*/ 
 function createButtonsForPages() {
-  playButton = createButton("Play");
-  playButton.style('width: 100px; height: 35px; background-color: lightgreen; color: black; font-size: 22px; border-radius: 10px;')
-  playButton.id("play_button");
-  // playButton.position(width/2 - 60, height - 215)
+  playButton = select("#play-button");
+  playButton.position(700,550)
   playButton.mouseClicked(changeToNameScreen);
   
-  enterButton = createButton('Enter');
-  enterButton.style('width: 75px; height: 35px; color: black; font-size: 24px; border-radius: 10px;')
-  enterButton.position(460,250)
+  enterButton = select("#enter-button")
+  enterButton.position(860,245)
   enterButton.mouseClicked(changeToGameScreen);
 }
   
 function createElementsNameScreen(){
-  textHeader = createDiv("Galaga Game")
-  textHeader.style("font-size: 64px; font-family: Tahoma; ")
-  textHeader.position(75, 75)
+  textHeader = select("#text-header")
+  textHeader.position(500,100)
   
-  nameInput = createInput('');
-  nameInput.style(' width: 200px; height: 30px; font: Georgia;  font-size: 24px; border-radius: 5px; border: 2px solid black;')
-  nameInput.position(250,250)
+  nameInput = select("#name-input")
+  nameInput.position(650,245)
 }
