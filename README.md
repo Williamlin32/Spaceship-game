@@ -7,6 +7,9 @@ Currently it is my second trimester and I don't have much time to fully commit i
 
 I will do some small changes throughout the months and hopefully i can finish it during a break. 
 
+To view the website pls click the following link:
+
+<code> [williamlin32.github.io/Space-game](https://williamlin32.github.io/Space-game)</code>
 
 All I have in my mind is: 
 - Main menu with play button 
