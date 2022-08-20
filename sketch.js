@@ -4,7 +4,7 @@ const startMenu = 0,
   namePage = 2,
   gamePage = 3,
   gameOverPage = 4;
-var currentPage = 3;
+var currentPage = 0;
 
 /*Videos*/
 var introVideo;
