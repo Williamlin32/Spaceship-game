@@ -23,6 +23,7 @@ let textHeader;
 
 /*Sprites*/
 let playerShip;
+let enemyShip;
 
 var player = {
   name: " ",
@@ -36,7 +37,7 @@ function preload(){
   backgroundImage = loadImage('Images/Background.png');
   playerShipImage = loadImage('Images/PlayerShip.png');
   
-  // enemyShipImage1 = loadImage('Images/EnemyShips/EnemyShip1.png')
+  enemyShipImage1 = loadImage('Images/EnemyShips/EnemyShip1.png')
 }
 
 function setup() {
@@ -51,6 +52,9 @@ function setup() {
   
   playerShip = createSprite(width/2, height - 85)
   playerShip.addImage(playerShipImage);
+
+  enemyShip = createSprite(width/2, 100);
+  enemyShip.addImage(enemyShipImage1);
   
   createElementsNameScreen();
   createButtonsForPages();
@@ -107,6 +111,7 @@ function nameScreen(){
 function gameScreen(){
   background(backgroundImage);
   playerShip.display();
+  enemyShip.display();
   customKeyPressed();
   teleportation();
 }
