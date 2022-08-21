@@ -24,6 +24,8 @@ let nameInput;
 
 /*Text Header*/
 let textHeader;
+let scoreBoard;
+
 
 /*groups*/
 let bullets;
@@ -97,6 +99,7 @@ function hideElements() {
   nameInput.hide();
   enterButton.hide();
   textHeader.hide();
+  scoreBoard.hide();
 }
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -118,11 +121,12 @@ function nameScreen() {
   textHeader.show();
   enterButton.show();
   textSize(32);
-  text("Name", 150, 275);
+  text("Username", 90, 275);
 }
 
 function gameScreen() {
   background(backgroundImage);
+  scoreBoard.show();
   playerShip.display();
   enemyShip.display();
   checkCollision();
@@ -222,6 +226,9 @@ function createElementsNameScreen() {
 
   nameInput = select("#name-input");
   nameInput.position(650, 245);
+
+  scoreBoard = select("#score-board");
+  scoreBoard.position(1100,0);
 }
 
 function createWalls(){

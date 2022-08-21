@@ -46,3 +46,14 @@ canvas {
   border-radius: 5px; 
   border: 2px solid black;
 }
+
+#score-board{
+  width: 200px;
+  height: 150px;
+  padding: 20px;
+  background-color: lightsalmon;
+  border: 2px solid brown;
+
+}
+
+
