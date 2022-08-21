@@ -1,0 +1,59 @@
+html, body {
+  margin: auto;
+  padding: 0;
+  background: grey;
+}
+canvas {
+  display: block;
+
+}
+
+#play-button{
+  width: 100px; 
+  height: 35px; 
+  background-color: lightgreen; 
+  color: black; 
+  font-size: 22px;
+   border-radius: 10px;
+}
+#play-button:hover{
+  background-color: darkgreen;
+  color: white;
+}
+
+#enter-button{
+  width: 75px; 
+  height: 35px;
+  color: black; 
+  font-size: 24px; 
+  border-radius: 10px;
+}
+
+#enter-button:hover{
+  background-color: grey;
+}
+
+#text-header{
+  font-size: 64px;
+  font-family: Tahoma;
+}
+
+#name-input{
+  width: 200px; 
+  height: 30px; 
+  font: Georgia;  
+  font-size: 24px; 
+  border-radius: 5px; 
+  border: 2px solid black;
+}
+
+#score-board{
+  width: 200px;
+  height: 150px;
+  padding: 20px;
+  background-color: lightsalmon;
+  border: 2px solid brown;
+
+}
+
+
