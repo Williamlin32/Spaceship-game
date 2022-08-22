@@ -25,6 +25,7 @@ let nameInput;
 /*Text Header*/
 let textHeader;
 let scoreBoard;
+let nameDisplay;
 
 
 /*groups*/
@@ -122,6 +123,9 @@ function nameScreen() {
   enterButton.show();
   textSize(32);
   text("Username", 90, 275);
+  if(keyIsDown(13)){
+    setTimeout(changeToGameScreen, 0);
+  }
 }
 
 function gameScreen() {
@@ -155,6 +159,8 @@ function changeToGameScreen() {
     player.name = "Unknown Player";
   }
   print(player.name);
+  nameDisplay.html(player.name, true);
+
 }
 function changeScreen() {
   currentPage++;
@@ -228,6 +234,8 @@ function createElementsNameScreen() {
 
   scoreBoard = select("#score-board");
   scoreBoard.position(1100,0);
+
+  nameDisplay = select("#username-text");
 }
 
 function createWalls(){
