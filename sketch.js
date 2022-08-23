@@ -27,7 +27,6 @@ let textHeader;
 let scoreBoard;
 let nameDisplay;
 
-
 /*groups*/
 let bullets;
 let walls;
@@ -39,6 +38,7 @@ let enemyShip;
 var player = {
   name: " ",
   score: 0,
+  life: 3,
 };
 
 let margin = 10;
@@ -123,7 +123,7 @@ function nameScreen() {
   enterButton.show();
   textSize(32);
   text("Username", 90, 275);
-  if(keyIsDown(13)){
+  if (keyIsDown(13)) {
     setTimeout(changeToGameScreen, 0);
   }
 }
@@ -131,6 +131,8 @@ function nameScreen() {
 function gameScreen() {
   background(backgroundImage);
   scoreBoard.show();
+  scoreDisplay.html(" " + player.score);
+
   playerShip.display();
   enemyShip.display();
   checkCollision();
@@ -151,16 +153,16 @@ function changeToNameScreen() {
   changeScreen();
   setTimeout(changeScreen, 2600);
 }
+[];
 function changeToGameScreen() {
   changeScreen();
   hideElements();
   player.name = nameInput.value();
   if (player.name == "") {
-    player.name = "Unknown Player";
+    player.name = "Player 1";
   }
   print(player.name);
-  nameDisplay.html(player.name, true);
-
+  nameDisplay.html(" " + player.name, true);
 }
 function changeScreen() {
   currentPage++;
@@ -197,18 +199,23 @@ function teleportation() {
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
-function playerShooting(){
-  let bullet = createSprite(playerShip.position.x, playerShip.position.y, 10, 10);
+function playerShooting() {
+  let bullet = createSprite(
+    playerShip.position.x,
+    playerShip.position.y,
+    10,
+    10
+  );
   bullet.setVelocity(0, -12);
   bullet.debug = true;
   bullets.add(bullet);
 }
 
-function checkCollision(){
+function checkCollision() {
   bullets.collide(walls, removeWallBullets);
 }
 
-function removeWallBullets(bullet, walls){
+function removeWallBullets(bullet, walls) {
   bullet.remove();
 }
 ///////////////////////////////////////////////////////////////////////////////
@@ -233,16 +240,17 @@ function createElementsNameScreen() {
   nameInput.position(650, 245);
 
   scoreBoard = select("#score-board");
-  scoreBoard.position(1100,0);
+  scoreBoard.position(1100, 0);
 
   nameDisplay = select("#username-text");
+  scoreDisplay = select("#current-score");
 }
 
-function createWalls(){
-  let wall1 = createSprite(0, 0, width*2, 2);
-  let wall2 = createSprite(0, height-2, width*2, 2);
-  wall1.shapeColor = color(0,0,63);
-  wall2.shapeColor = color(0,0,63);
+function createWalls() {
+  let wall1 = createSprite(0, 0, width * 2, 2);
+  let wall2 = createSprite(0, height - 2, width * 2, 2);
+  wall1.shapeColor = color(0, 0, 63);
+  wall2.shapeColor = color(0, 0, 63);
   walls.add(wall1);
   walls.add(wall2);
 }
