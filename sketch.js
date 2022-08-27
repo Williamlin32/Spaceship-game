@@ -4,7 +4,7 @@ const startMenu = 0,
   namePage = 2,
   gamePage = 3,
   gameOverPage = 4;
-var currentPage = 0;
+var currentPage = 2;
 
 /*Videos*/
 var introVideo;
@@ -30,10 +30,10 @@ let nameDisplay;
 /*groups*/
 let bullets;
 let walls;
+let enemyGroup;
 
 /*Sprites*/
 let playerShip;
-let enemyShip;
 
 var player = {
   name: " ",
@@ -66,11 +66,9 @@ function setup() {
   playerShip.debug = true;
   playerShip.setCollider("circle", 0, 5, 25);
 
-  enemyShip = createSprite(width / 2, 100);
-  enemyShip.addImage(enemyShipImage1);
-
   bullets = new Group();
   walls = new Group();
+  enemyGroup = new Group();
   createWalls();
 
   createElementsNameScreen();
@@ -101,6 +99,18 @@ function hideElements() {
   enterButton.hide();
   textHeader.hide();
   scoreBoard.hide();
+}
+
+let enemyShips = [];
+var numEnemies = 3;
+function createEnemies() {
+  for (var i = 0; i < numEnemies; i++) {
+    enemyShips[i] = createSprite(random(0, width), 100);
+    enemyShips[i].addImage(enemyShipImage1);
+    enemyShips[i].debug = true;
+    enemyShips[i].setCollider("circle", 0, -5, 30);
+    enemyGroup.add(enemyShips[i]);
+  }
 }
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
@@ -134,8 +144,9 @@ function gameScreen() {
   scoreDisplay.html(" " + player.score);
 
   playerShip.display();
-  enemyShip.display();
+
   checkCollision();
+  drawSprites(enemyGroup);
   drawSprites(bullets);
   drawSprites(walls);
   customKeyPressed();
@@ -153,10 +164,12 @@ function changeToNameScreen() {
   changeScreen();
   setTimeout(changeScreen, 2600);
 }
-[];
+
 function changeToGameScreen() {
   changeScreen();
   hideElements();
+  createEnemies();
+
   player.name = nameInput.value();
   if (player.name == "") {
     player.name = "Player 1";
