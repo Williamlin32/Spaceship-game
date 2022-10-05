@@ -9,7 +9,7 @@ I will do some small changes throughout the months and hopefully i can finish it
 
 To view the website pls click the following link:
 
-<a href="https://williamlin32.github.io/Space-game/" target="_blank">williamlin32.github.io/Space-game</a>
+<a href="https://williamlin32.github.io/Spaceship-game/" target="_blank">williamlin32.github.io/Space-game</a>
 
 All I have in my mind is: 
 - Main menu with play button 
